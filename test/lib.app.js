@@ -57,6 +57,8 @@ const validateAppDetails = (app) => {
   app.comments.map(assert.isString);
 
   assert.isString(app.recentChanges);
+  assert.isArray(app.tags);
+  assert.equal(app.tags, app.tags.filter((tag) => tag));
 };
 
 describe('App method', () => {
